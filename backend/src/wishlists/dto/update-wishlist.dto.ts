@@ -1,0 +1,29 @@
+import { ApiPropertyOptional } from '@nestjs/swagger';
+import { IsString, IsUrl, IsOptional, Length, IsArray } from 'class-validator';
+
+export class UpdateWishlistDto {
+  @ApiPropertyOptional({ description: 'The name of the wishlist' })
+  @IsString()
+  @Length(1, 250)
+  @IsOptional()
+  name?: string;
+
+  @ApiPropertyOptional({ description: 'The description of the wishlist' })
+  @IsString()
+  @Length(0, 1500)
+  @IsOptional()
+  description?: string;
+
+  @ApiPropertyOptional({ description: 'The image URL for the wishlist' })
+  @IsUrl()
+  @IsOptional()
+  image?: string;
+
+  @ApiPropertyOptional({
+    description: 'An array of IDs of Wish items included in the wishlist',
+    type: [Number],
+  })
+  @IsArray()
+  @IsOptional()
+  itemIds?: number[];
+}
