@@ -16,7 +16,7 @@ async function bootstrap() {
     disableErrorMessages: false, // отображение сообщений об ошибках
   }));
   app.enableCors({
-    origin: '*', // Указать конкретный домен или использовать '*' для разрешения всех доменов
+    origin: 'https://happy.nomoredomainsmonster.ru', // Указать конкретный домен или использовать '*' для разрешения всех доменов
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: 'Content-Type, Authorization',
   });
