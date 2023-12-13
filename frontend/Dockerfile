@@ -11,4 +11,4 @@ COPY --from=builder ./app/build /usr/share/nginx/html
 COPY ./nginx/default.conf etc/nginx/conf.d
 
 
-CMD [ "nginx", "-g", "deamon off;" ]
+CMD [ "nginx", "-g", "daemon off;" ]
