@@ -7,7 +7,7 @@ services:
       context: backend
       dockerfile: Dockerfile
     ports:
-      -"4000:3001"
+      - "4000:3001"
     env_file:
       - .env
     networks:
@@ -20,7 +20,7 @@ services:
     env_file:
       - .env
     volumes:
-      -postgres_data:/data/postgres
+      - postgres_data:/data/postgres
     networks:
       - backend
 
@@ -30,21 +30,21 @@ services:
       context: frontend
       dockerfile: Dockerfile
     ports:
-      -"8081:80"
+      - "8081:80"
     networks:
       - frontend
 
   adminer:
     image: adminer
-    reatart: always
+    restart: always
     ports:
-      -"8082:8080"
+      - "8082:8080"
     networks:
       - backend
       
-  volumes:
-    postgres_data:
+volumes:
+  postgres_data:
 
-  networks:
-    backend:
-    frontend:
+networks:
+  backend:
+  frontend:
